@@ -475,6 +475,16 @@
       return "https://www.tumblr.com/widgets/share/tool?posttype=link&title=" + encodeURIComponent(this.props.message) + "&content=" + encodeURIComponent(this.props.url) + "&canonicalUrl=" + encodeURIComponent(this.props.url) + "&shareSource=tumblr_share_button";
     }
   });
+  
+  exports.FaithlifeButton = React.createClass({
+    displayName: "FaithlifeButton"
+
+    , mixins: [Button, DefaultBlankTarget]
+
+    , constructUrl: function () {
+      return "https://faithlife.com/share?url=" + encodeURIComponent(this.props.url);
+    }
+  });
 
   return exports;
 });
