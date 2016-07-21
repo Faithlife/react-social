@@ -482,7 +482,7 @@
     , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
-      return "https://faithlife.com/share?url=" + encodeURIComponent(this.props.url);
+      return "https://faithlife.com/share?url=" + encodeURIComponent(this.props.url) + "&content=" + encodeURIComponent(this.props.content);
     }
   });
 
