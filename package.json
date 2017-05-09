@@ -10,6 +10,7 @@
     "beefy": "~2.1.1",
     "browserify": "~8.1.1",
     "jquery": "^2.2.3",
+    "prop-types": "^15.5.8",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "tape": "^4.5.1",

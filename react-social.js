@@ -1,12 +1,12 @@
 ;(function (root, factory) {
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = factory(require("react"));
+    module.exports = factory(require("react"), require("prop-types"));
   } else if (typeof define === "function" && define.amd) {
-    define(["react"], factory);
+    define(["react", "prop-types"], factory);
   } else {
-    root.ReactSocial = factory(root.React);
+    root.ReactSocial = factory(root.React, root.PropTypes);
   }
-})(this, function (React) {
+})(this, function (React, PropTypes) {
   "use strict";
 
   var isBrowser = function () {
@@ -102,9 +102,9 @@
     displayName: "Count"
 
     , propTypes: {
-      element: React.PropTypes.string
-      , url: React.PropTypes.string
-      , token: React.PropTypes.string
+      element: PropTypes.string
+      , url: PropTypes.string
+      , token: PropTypes.string
     }
 
     , getDefaultProps: function () {
@@ -188,18 +188,18 @@
     displayName: "Button"
 
     , propTypes: {
-      element: React.PropTypes.oneOfType([
-        React.PropTypes.string
-      , React.PropTypes.func
+      element: PropTypes.oneOfType([
+        PropTypes.string
+      , PropTypes.func
       ])
-      , url: React.PropTypes.string
-      , media: React.PropTypes.string
-      , message: React.PropTypes.string
-      , onClick: React.PropTypes.func
-      , target: React.PropTypes.string
-      , windowOptions: React.PropTypes.array
-      , _open: React.PropTypes.bool
-      , sharer: React.PropTypes.bool
+      , url: PropTypes.string
+      , media: PropTypes.string
+      , message: PropTypes.string
+      , onClick: PropTypes.func
+      , target: PropTypes.string
+      , windowOptions: PropTypes.array
+      , _open: PropTypes.bool
+      , sharer: PropTypes.bool
     }
 
     , getDefaultProps: function () {
@@ -404,11 +404,11 @@
     , mixins: [Button, DefaultBlankTarget]
 
     , propTypes: {
-      appId: React.PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.number
+      appId: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
       ]).isRequired,
-      sharer: React.PropTypes.bool
+      sharer: PropTypes.bool
     }
 
     , constructUrl: function () {
@@ -461,7 +461,7 @@
     , mixins: [Button, DefaultBlankTarget]
 
     , propTypes: {
-      media: React.PropTypes.string.isRequired
+      media: PropTypes.string.isRequired
     }
 
     , constructUrl: function () {
